@@ -1,122 +1,77 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState, useEffect } from 'react';
+import Experience from './components/Experience';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [scrollOffset, setScrollOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Calculate how many screen heights (0 to 2) we have scrolled
+      const progress = window.scrollY / window.innerHeight;
+      setScrollOffset(progress);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleExplore = () => {
+    // Smooth scroll down to the second section (Introduction)
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  };
 
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+      {/* 1. Background 3D Viewport with Scroll Tracking */}
+      <Experience scrollOffset={scrollOffset} />
 
-      <div className="ticks"></div>
+      {/* 2. Foreground HTML Layer */}
+      <main className="html-container">
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+        {/* SECTION 1: HERO */}
+        <section className="section hero-section">
+          <div className="section-content left-align">
+            <h1>UniWave</h1>
+            <p className="tagline">
+              One Wave. Pure Focus.
+            </p>
+            <button className="explore-btn" onClick={handleExplore}>
+              Explore Sound
+            </button>
+          </div>
+        </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+        {/* SECTION 2: INTRODUCTION */}
+        <section className="section intro-section">
+          <div className="section-content right-align">
+            <h2>Pure Sound.<br />Zero Distraction.</h2>
+            <p className="description">
+              UniWave headphones combine bespoke craftsmanship with precision audio engineering. 
+              Designed for audiophiles who demand clarity, comfort, and uncompromising acoustics. 
+              Experience sound in its truest form.
+            </p>
+          </div>
+        </section>
+
+        {/* SECTION 3: SMART ANC */}
+        <section className="section anc-section">
+          <div className="section-content left-align">
+            <h2>Smart ANC</h2>
+            <p className="anc-subtitle">Active Noise Cancelling</p>
+            <p className="description">
+              Hybrid active noise cancellation adapts to your environment in real-time. 
+              Dual beamforming microphones detect ambient noise, cancelling it out before it reaches your ears. 
+              Block out the world and stay in your zone.
+            </p>
+          </div>
+        </section>
+
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
