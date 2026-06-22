@@ -1,25 +1,42 @@
 // src/components/Headphone.jsx
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-// Animation keyframes mapped to scroll progress (0: Hero, 1: Intro, 2: Smart ANC zoom)
+// Animation keyframes mapped to scroll progress — one stop per section.
+// The scroll tells a visual story: centered intro, swing left, two earcup
+// close-ups, recenter, then an elegant floating showcase to finish.
 const keyframes = [
     {
-        pos: [1.0, -1.15, 0],
-        rot: [0, Math.PI, 0], // Starts at your preferred Math.PI rotation
+        pos: [0, -1.15, 0], // 0 Hero — centered & floated low so it clears the left-aligned logo/tagline/button
+        rot: [0, Math.PI, 0], // Front-facing, full product
         scale: 0.8
     },
     {
-        pos: [-1.0, -1.15, 0], // Moved slightly back from -1.3 so it isn't cut off
-        rot: [0, 2 * Math.PI / 3, 0], 
-        scale: 0.8
+        pos: [-1.6, -1.0, 0.2], // 1 Introduction — text sits RIGHT, so push far LEFT with open space around the copy
+        rot: [0, 2 * Math.PI / 3, 0], // Three-quarter view
+        scale: 1.05 // Slight zoom in
     },
     {
-        pos: [1.1, -0.7, 0.8], // Shifted to the right to avoid overlapping the text, and Y adjusted to center the earcup
-        rot: [0, Math.PI / 2, 0], // Turned sideways to show earcup profile
-        scale: 1.25 // Zoomed in nicely but not fullscreen-blocking
+        pos: [1.6, -0.75, 0.3], // 2 AI Focus Mute — text sits LEFT, so move RIGHT and zoom onto the earcup
+        rot: [0, Math.PI / 2, 0], // Side profile revealing the earcup
+        scale: 1.3
+    },
+    {
+        pos: [-1.6, -0.95, 0.2], // 3 Study Mode — text sits RIGHT, so move LEFT (different angle from AI Focus Mute)
+        rot: [0.1, -2 * Math.PI / 3, 0], // Tilted three-quarter from the opposite side
+        scale: 1.15
+    },
+    {
+        pos: [1.6, -1.0, 0], // 4 EchoShare — text sits LEFT, so move RIGHT with generous spacing, full product
+        rot: [0.05, Math.PI * 0.85, 0], // Near-front three-quarter to show the whole pair clearly
+        scale: 1.0
+    },
+    {
+        pos: [0, -1.55, 0], // 5 Final — centered & floated low beneath the centered headline, zoomed out
+        rot: [0.12, Math.PI * 0.9, 0], // Gentle premium tilt
+        scale: 0.85
     }
 ];
 
@@ -64,8 +81,10 @@ export function Headphone({ scrollOffset, ...props }) {
 
         // 1. FLOATING WAVE ANIMATION
         const elapsedTime = state.clock.getElapsedTime();
-        // Subtly reduce the float amount when zoomed-in close (Smart ANC) to keep the detailed view stable
-        const floatAmount = scrollOffset > 1.2 ? 0.03 : 0.12;
+        // Keep the float gentle during the two earcup close-ups (AI Focus Mute + Study Mode);
+        // let it float freely for the Hero, EchoShare and Final showcase shots.
+        const isCloseUp = scrollOffset > 1.6 && scrollOffset < 3.6;
+        const floatAmount = isCloseUp ? 0.03 : 0.12;
         const floatY = Math.sin(elapsedTime * 1.5) * floatAmount;
 
         // 2. SMOOTH POSITION & SCALE LERP

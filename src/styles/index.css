@@ -64,6 +64,14 @@ body {
   margin-left: auto;
 }
 
+.center-align {
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  text-align: center;
+  max-width: 60%;
+}
+
 /* Typography styles */
 .hero-section h1 {
   font-size: 5rem;
@@ -81,13 +89,16 @@ body {
 }
 
 .intro-section h2,
-.anc-section h2 {
+.focus-section h2,
+.study-section h2,
+.echo-section h2,
+.final-section h2 {
   font-size: 3.5rem;
   color: #FFF7DF;
   line-height: 1.1;
 }
 
-.anc-subtitle {
+.feature-subtitle {
   font-size: 1.5rem;
   color: #9B8974;
   font-weight: 700;
