@@ -78,6 +78,7 @@ body {
   letter-spacing: 2px;
   background: linear-gradient(45deg, #FFF7DF, #9B8974);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.1;
 }
@@ -112,6 +113,13 @@ body {
   color: #FFF7DF;
   line-height: 1.6;
   opacity: 0.85;
+}
+
+
+.final-section h2,
+.final-section .description {
+  color: #000000;
+  opacity: 1; 
 }
 
 .explore-btn {
