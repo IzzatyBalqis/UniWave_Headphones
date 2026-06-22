@@ -4,39 +4,43 @@ import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-// Animation keyframes mapped to scroll progress — one stop per section.
-// The scroll tells a visual story: centered intro, swing left, two earcup
-// close-ups, recenter, then an elegant floating showcase to finish.
+// Animation keyframes for each section
 const keyframes = [
     {
-        pos: [0, -1.15, 0], // 0 Hero — centered & floated low so it clears the left-aligned logo/tagline/button
-        rot: [0, Math.PI, 0], // Front-facing, full product
+        // Hero section
+        pos: [-0.8, -1.0, 0],
+        rot: [0, Math.PI, 0],
         scale: 0.8
     },
     {
-        pos: [-1.6, -1.0, 0.2], // 1 Introduction — text sits RIGHT, so push far LEFT with open space around the copy
-        rot: [0, 2 * Math.PI / 3, 0], // Three-quarter view
-        scale: 1.05 // Slight zoom in
-    },
-    {
-        pos: [1.6, -0.75, 0.3], // 2 AI Focus Mute — text sits LEFT, so move RIGHT and zoom onto the earcup
-        rot: [0, Math.PI / 2, 0], // Side profile revealing the earcup
-        scale: 1.3
-    },
-    {
-        pos: [-1.6, -0.95, 0.2], // 3 Study Mode — text sits RIGHT, so move LEFT (different angle from AI Focus Mute)
-        rot: [0.1, -2 * Math.PI / 3, 0], // Tilted three-quarter from the opposite side
-        scale: 1.15
-    },
-    {
-        pos: [1.6, -1.0, 0], // 4 EchoShare — text sits LEFT, so move RIGHT with generous spacing, full product
-        rot: [0.05, Math.PI * 0.85, 0], // Near-front three-quarter to show the whole pair clearly
-        scale: 1.0
-    },
-    {
-        pos: [0, -1.55, 0], // 5 Final — centered & floated low beneath the centered headline, zoomed out
-        rot: [0.12, Math.PI * 0.9, 0], // Gentle premium tilt
+        // Introduction
+        pos: [1.5, -1.0, 0],
+        rot: [0, 2 * Math.PI / 3, 0],
         scale: 0.85
+    },
+    {
+        // AI focus mute
+        pos: [-1.5, -0.8, 0],
+        rot: [0, Math.PI / 2, 0],
+        scale: 0.95
+    },
+    {
+        // Study mode
+        pos: [1.5, -1.0, 0],
+        rot: [0.1, 4 * Math.PI / 3, 0],
+        scale: 0.85
+    },
+    {
+        // Echo share
+        pos: [-1.5, -1.0, 0],
+        rot: [0, Math.PI * 0.8, 0],
+        scale: 0.85
+    },
+    {
+        // Final showcase
+        pos: [0, -1.2, -0.4],
+        rot: [0.1, Math.PI, 0],
+        scale: 0.9
     }
 ];
 
