@@ -7,10 +7,10 @@ export default function Experience({ scrollOffset }) {
     return (
         <div className="canvas-container">
             <Canvas camera={{ position: [0, 0, 4], fov: 45 }}>
-                {/* Very low ambient light so shadowed areas are dark */}
+                {/* ambient light */}
                 <ambientLight intensity={0.08} />
 
-                {/* Strong light shining from the top-right */}
+                {/* key light */}
                 <directionalLight position={[6, 8, 4]} intensity={2.5} />
 
                 <Suspense fallback={null}>
@@ -26,7 +26,7 @@ export default function Experience({ scrollOffset }) {
                         <Headphone scale={0.8} scrollOffset={scrollOffset} />
                     </PresentationControls>
 
-                    {/* Soft dynamic floor shadow */}
+                    {/* floor shadow */}
                     <ContactShadows
                         position={[0, -1.6, 0]}
                         opacity={0.6}
@@ -35,7 +35,7 @@ export default function Experience({ scrollOffset }) {
                         far={2}
                     />
 
-                    {/* Subtle studio environment reflections */}
+                    {/* reflections */}
                     <Environment preset="studio" intensity={0.25} />
                 </Suspense>
             </Canvas>

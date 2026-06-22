@@ -1,4 +1,3 @@
-// src/components/Headphone.jsx
 import { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
@@ -45,7 +44,7 @@ const keyframes = [
 ];
 
 const getInterpolatedValue = (scroll) => {
-    // Clamp scroll progress between 0 and keyframes length - 1
+    // clamp to keyframe range
     const clampedScroll = Math.max(0, Math.min(scroll, keyframes.length - 1));
     const index = Math.floor(clampedScroll);
     const segmentProgress = clampedScroll - index;
@@ -83,15 +82,14 @@ export function Headphone({ scrollOffset, ...props }) {
 
         const target = getInterpolatedValue(scrollOffset);
 
-        // 1. FLOATING WAVE ANIMATION
+        // floating animation
         const elapsedTime = state.clock.getElapsedTime();
-        // Keep the float gentle during the two earcup close-ups (AI Focus Mute + Study Mode);
-        // let it float freely for the Hero, EchoShare and Final showcase shots.
+        // gentler float during the close-up sections
         const isCloseUp = scrollOffset > 1.6 && scrollOffset < 3.6;
         const floatAmount = isCloseUp ? 0.03 : 0.12;
         const floatY = Math.sin(elapsedTime * 1.5) * floatAmount;
 
-        // 2. SMOOTH POSITION & SCALE LERP
+        // position & scale
         modelRef.current.position.x = THREE.MathUtils.lerp(modelRef.current.position.x, target.pos[0], 0.05);
         modelRef.current.position.z = THREE.MathUtils.lerp(modelRef.current.position.z, target.pos[2], 0.05);
         modelRef.current.position.y = THREE.MathUtils.lerp(modelRef.current.position.y, target.pos[1] + floatY, 0.05);
@@ -100,7 +98,7 @@ export function Headphone({ scrollOffset, ...props }) {
         const nextScale = THREE.MathUtils.lerp(currentScale, target.scale, 0.05);
         modelRef.current.scale.set(nextScale, nextScale, nextScale);
 
-        // 3. MOUSE PARALLAX TILT EFFECT (applied on top of scroll keyframe rotation)
+        // rotation + mouse parallax
         const targetRotationY = target.rot[1] + state.pointer.x * 0.25;
         const targetRotationX = target.rot[0] - state.pointer.y * 0.15;
 

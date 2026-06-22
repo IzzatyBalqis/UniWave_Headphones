@@ -11,26 +11,26 @@ body {
   overflow-x: hidden;
 }
 
-/* Houses the fixed R3F Canvas */
+/* 3D canvas */
 .canvas-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 1; /* Sits behind the text */
-  pointer-events: auto; /* Allows clicking/dragging the 3D model */
+  z-index: 1; /* behind the text */
+  pointer-events: auto; /* allow dragging the model */
 }
 
-/* Controls the HTML scrolling container */
+/* scrolling content */
 .html-container {
   position: relative;
-  z-index: 2; /* Sits on top of the 3D model */
+  z-index: 2; /* on top of the model */
   width: 100%;
-  pointer-events: none; /* Let events pass through to canvas container */
+  pointer-events: none; /* let clicks pass through to the canvas */
 }
 
-/* Restore pointer events for interactive elements on the webpage */
+/* keep buttons and links clickable */
 .html-container a,
 .html-container button,
 .html-container input,
@@ -39,7 +39,7 @@ body {
   pointer-events: auto;
 }
 
-/* Base style for sections */
+/* sections */
 .section {
   height: 100vh;
   display: flex;
@@ -48,7 +48,7 @@ body {
   box-sizing: border-box;
 }
 
-/* Container for section text contents */
+/* section text */
 .section-content {
   max-width: 45%;
   display: flex;
@@ -72,7 +72,7 @@ body {
   max-width: 60%;
 }
 
-/* Typography styles */
+/* typography */
 .hero-section h1 {
   font-size: 5rem;
   letter-spacing: 2px;
@@ -115,11 +115,11 @@ body {
   opacity: 0.85;
 }
 
-
+/* dark text on the final section */
 .final-section h2,
 .final-section .description {
   color: #000000;
-  opacity: 1; 
+  opacity: 1;
 }
 
 .explore-btn {

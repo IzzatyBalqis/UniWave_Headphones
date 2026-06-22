@@ -6,7 +6,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Calculate how many screen heights (0 to 2) we have scrolled
+      // scroll progress in screen heights
       const progress = window.scrollY / window.innerHeight;
       setScrollOffset(progress);
     };
@@ -16,7 +16,7 @@ function App() {
   }, []);
 
   const handleExplore = () => {
-    // Smooth scroll down to the second section (Introduction)
+    // scroll to next section
     window.scrollTo({
       top: window.innerHeight,
       behavior: 'smooth'
@@ -25,13 +25,13 @@ function App() {
 
   return (
     <>
-      {/* 1. Background 3D Viewport with Scroll Tracking */}
+      {/* 3D background */}
       <Experience scrollOffset={scrollOffset} />
 
-      {/* 2. Foreground HTML Layer */}
+      {/* page content */}
       <main className="html-container">
 
-        {/* SECTION 1: HERO */}
+        {/* Hero */}
         <section className="section hero-section">
           <div className="section-content left-align">
             <h1>UniWave</h1>
@@ -44,7 +44,7 @@ function App() {
           </div>
         </section>
 
-        {/* SECTION 2: INTRODUCTION */}
+        {/* Introduction */}
         <section className="section intro-section">
           <div className="section-content right-align">
             <h2>Built for Focus.<br />Made for Students.</h2>
@@ -56,7 +56,7 @@ function App() {
           </div>
         </section>
 
-        {/* SECTION 3: AI FOCUS MUTE */}
+        {/* AI Focus Mute */}
         <section className="section focus-section">
           <div className="section-content left-align">
             <h2>AI Focus Mute</h2>
@@ -69,7 +69,7 @@ function App() {
           </div>
         </section>
 
-        {/* SECTION 4: STUDY MODE */}
+        {/* Study Mode */}
         <section className="section study-section">
           <div className="section-content right-align">
             <h2>Study Mode</h2>
@@ -82,7 +82,7 @@ function App() {
           </div>
         </section>
 
-        {/* SECTION 5: ECHOSHARE */}
+        {/* EchoShare */}
         <section className="section echo-section">
           <div className="section-content left-align">
             <h2>EchoShare</h2>
@@ -95,7 +95,7 @@ function App() {
           </div>
         </section>
 
-        {/* SECTION 6: FINAL / OUTRO */}
+        {/* Final */}
         <section className="section final-section">
           <div className="section-content center-align">
             <h2>The Future of<br />Student Productivity.</h2>
