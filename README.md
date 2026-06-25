@@ -88,7 +88,7 @@ The website is a single-page scrolling site broken down into six main sections:
 
 | Hero | Feature close-up |
 |------|------------------|
-| <img width="2529" height="1334" alt="hero png" src="https://github.com/user-attachments/assets/7064d26f-1624-4cfd-8006-657dd9abf2ec" /> | <img width="2534" height="1325" alt="Screenshot 2026-06-25 220525" src="https://github.com/user-attachments/assets/7dea2b33-54eb-44e8-a3e7-225420db61cd" /> |
+| <img width="2529" height="1334" alt="hero png" src="https://github.com/user-attachments/assets/7064d26f-1624-4cfd-8006-657dd9abf2ec" /> | <img width="2523" height="1305" alt="Screenshot 2026-06-25 220842" src="https://github.com/user-attachments/assets/b01c5b25-cf9f-4170-b646-de9695d737ba" /> |
 
 ## 🏆 12. Individual Contribution
 
