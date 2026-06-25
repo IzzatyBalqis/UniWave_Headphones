@@ -1,14 +1,14 @@
-# UniWave Headphones : 3D Product Landing Page
+# UniWave Headphones - 3D Product Landing Page
 
 This is our interactive 3D landing page for **UniWave**, a pair of smart headphones designed specifically for university students. The site is built as a single page using **React Three Fiber**.
 
-> 📌 **Live URL:** `<deployed link>`
+> 📌 **Live URL:** `<DEPLOYED LINK>`
 
 ---
 
 ## 1. Project Title
 
-**UniWave Headphones — Smart Productivity Headphones for University Students**
+**UniWave Headphones - Smart Productivity Headphones for University Students**
 
 ## 2. Group Members
 
@@ -41,7 +41,7 @@ Our goal was to create a modern and attractive single-page landing page to showc
 | Framework | React 19 |
 | Build tool | Vite 8 |
 | 3D rendering | React Three Fiber (`@react-three/fiber`) |
-| 3D helpers | Drei (`@react-three/drei`) — `useGLTF`, `PresentationControls`, `Environment`, `ContactShadows` |
+| 3D helpers | Drei (`@react-three/drei`): `useGLTF`, `PresentationControls`, `Environment`, `ContactShadows` |
 | 3D engine | Three.js |
 | 3D model | `modelHeadPhone-transformed.glb` (compressed GLTF) |
 | Styling | Plain CSS (custom, responsive) |
@@ -53,12 +53,12 @@ Our goal was to create a modern and attractive single-page landing page to showc
 
 The website is a single-page scrolling site broken down into six main sections:
 
-1. **Hero section** — Introduces the brand with our tagline and an "Explore Sound" call-to-action.
-2. **Introduction** — Gives a quick overview of the product ("Built for Focus. Made for Students.").
-3. **AI Focus Mute** — Highlights the real-time AI noise cancellation feature.
-4. **Study Mode** — Showcases the built-in Pomodoro timer and background sounds.
-5. **EchoShare** — Explains how users can share audio with up to four headphones.
-6. **Outro** — A final closing statement for the brand.
+1. **Hero section:** Introduces the brand with our tagline and an "Explore Sound" call-to-action.
+2. **Introduction:** Gives a quick overview of the product ("Built for Focus. Made for Students.").
+3. **AI Focus Mute:** Highlights the real-time AI noise cancellation feature.
+4. **Study Mode:** Showcases the built-in Pomodoro timer and background sounds.
+5. **EchoShare:** Explains how users can share audio with up to four headphones.
+6. **Outro:** A final closing statement for the brand.
 
 As you scroll through these sections, the 3D headphone model moves and rotates to match the text on the screen.
 
@@ -80,7 +80,7 @@ As you scroll through these sections, the 3D headphone model moves and rotates t
 
 ## 10. Live URL
 
-`<deployed link>`
+`<DEPLOYED LINK>`
 
 ## 11. Screenshots
 
@@ -112,5 +112,5 @@ Building the UniWave website showed us how much **React Three Fiber** can improv
 ```bash
 npm install      # install dependencies
 npm run dev      # start dev server (http://localhost:5173)
-npm run build    # production build → dist/
+npm run build    # production build -> dist/
 npm run preview  # preview the production build locally
