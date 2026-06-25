@@ -86,8 +86,6 @@ The website is a single-page scrolling site broken down into six main sections:
 
 ## 📸 11. Screenshots
 
-> *Add screenshots after deploying. Suggested shots: Hero, AI Focus Mute close-up, EchoShare, Final.*
-
 | Hero | Feature close-up |
 |------|------------------|
 | `<screenshot-1.png>` | `<screenshot-2.png>` |
