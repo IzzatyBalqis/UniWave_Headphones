@@ -1,6 +1,6 @@
 # UniWave Headphones — 3D Product Landing Page
 
-A single-page, interactive **3D technology product landing page** built with **React Three Fiber**, showcasing *UniWave* — smart productivity headphones designed for university students.
+This is our interactive 3D landing page for **UniWave**, a pair of smart headphones designed specifically for university students. The site is built as a single page using **React Three Fiber**.
 
 > 📌 **Live URL:** `<ADD-YOUR-DEPLOYED-LINK-HERE>`
 
@@ -21,24 +21,18 @@ A single-page, interactive **3D technology product landing page** built with **R
 
 ## 3. Product Concept
 
-UniWave is a **productivity-first smart headphone** aimed at university students. It blends
-active noise control with study-focused software features to help students concentrate in
-noisy environments — dorms, lecture halls, libraries — while still staying connected to the
-moments that matter. The product is positioned around one promise: *One Wave. Pure Focus.*
+UniWave is a smart headphone built specifically to help university students stay productive. It combines active noise cancellation with software features designed for studying. The idea is to help students focus in noisy places like dorms, libraries, or lecture halls, without completely isolating them from what's going on around them. Our main motto is: *One Wave. Pure Focus.*
 
 ## 4. Website Objective
 
-To design, develop, and deploy a **modern, visually appealing single-page landing page** that
-presents the UniWave product and its core features through **interactive 3D content**. The site
-uses a scroll-driven 3D headphone model to guide the user through the product story, turning a
-standard feature list into an engaging, cinematic experience.
+Our goal was to create a modern and attractive single-page landing page to showcase UniWave and its main features using interactive 3D elements. Instead of just listing features, the website uses a 3D headphone model that moves as you scroll, creating a more engaging and fun experience for visitors.
 
 ## 5. Target Users
 
-- University and college students
-- Learners who study in noisy or shared environments
-- Students who use focus techniques (e.g. Pomodoro) and group study sessions
-- Younger, tech-oriented buyers who respond to interactive, modern web experiences
+- College and university students.
+- Anyone who needs to study in noisy or shared spaces.
+- Students who rely on study techniques like the Pomodoro method or who do group studies.
+- Young, tech-savvy people who enjoy modern and interactive websites.
 
 ## 6. Tools and Technologies Used
 
@@ -57,39 +51,32 @@ standard feature list into an engaging, cinematic experience.
 
 ## 7. Website Features
 
-The page is a single scrolling experience divided into six sections:
+The website is a single-page scrolling site broken down into six main sections:
 
-1. **Hero** — Brand intro with tagline and call-to-action ("Explore Sound").
-2. **Introduction** — "Built for Focus. Made for Students." product overview.
-3. **AI Focus Mute** — On-device AI that mutes distracting sounds in real time.
-4. **Study Mode** — Built-in Pomodoro timer with curated ambient soundscapes.
-5. **EchoShare** — Share one audio stream across up to four headphones.
-6. **Final / Outro** — Closing brand statement.
+1. **Hero section** — Introduces the brand with our tagline and an "Explore Sound" call-to-action.
+2. **Introduction** — Gives a quick overview of the product ("Built for Focus. Made for Students.").
+3. **AI Focus Mute** — Highlights the real-time AI noise cancellation feature.
+4. **Study Mode** — Showcases the built-in Pomodoro timer and background sounds.
+5. **EchoShare** — Explains how users can share audio with up to four headphones.
+6. **Outro** — A final closing statement for the brand.
 
-Each section pairs concise copy with a synchronized 3D camera move on the headphone model.
+As you scroll through these sections, the 3D headphone model moves and rotates to match the text on the screen.
 
 ## 8. React Three Fiber Implementation
 
-- A fixed full-screen `<Canvas>` (`Experience.jsx`) sits **behind** the scrolling HTML layer, so
-  the 3D model stays visible while text scrolls over it.
-- The headphone is loaded as a compressed **GLTF model** via `useGLTF` and preloaded for fast first paint.
-- Lighting uses a low ambient light, a strong directional key light, a soft **`ContactShadows`**
-  floor, and a **studio `Environment`** for realistic reflections.
-- **`PresentationControls`** lets the user **drag to rotate** the headphone within constrained
-  polar/azimuth limits, snapping back when released.
-- The model's position, rotation, and scale are animated **per scroll section** using a keyframe
-  array and linear interpolation, updated every frame inside `useFrame` with smooth `lerp` easing.
+- We placed a full-screen `<Canvas>` (`Experience.jsx`) behind the scrolling text layer. This keeps the 3D model fixed in the background while the content scrolls over it.
+- The headphone is a compressed **GLTF model** loaded using `useGLTF`. We also preload it so the site loads faster.
+- For lighting, we used low ambient light, a strong directional key light, a soft shadow on the floor using **`ContactShadows`**, and a **studio `Environment`** to make the reflections look realistic.
+- Users can click and drag to rotate the headphone thanks to **`PresentationControls`**. It snaps back to its original position when released.
+- We animated the model's position, rotation, and scale based on which section the user is looking at. We used an array of keyframes and `lerp` inside `useFrame` to make the transitions smooth.
 
 ## 9. Interaction and Animation Description
 
-- **Scroll-driven storytelling:** Scroll progress (`scrollY / innerHeight`) maps to six keyframes.
-  The headphone swings left/right opposite to the text, zooms into the earcup for hardware-focused
-  features, and recenters for the hero and outro — creating a continuous visual narrative.
-- **Drag to rotate:** Users can grab and rotate the model directly (PresentationControls).
-- **Mouse parallax:** The model subtly tilts toward the cursor for a sense of depth.
-- **Idle float:** A gentle sine-wave float keeps the product alive; the float is dampened during
-  the close-up sections so detail shots stay steady.
-- **Smooth easing:** All transitions use frame-rate-independent `lerp` for fluid motion.
+- **Animations based on scrolling:** We tracked the scroll progress to trigger different keyframes. As you scroll, the headphone swings left or right (away from the text), zooms in to show details like the earcups, and centers itself for the intro and outro.
+- **Interactive rotation:** Visitors can easily click and drag to look around the model.
+- **Parallax effect:** The headphone slightly tilts depending on where your mouse cursor is, adding a nice 3D depth effect.
+- **Floating animation:** To make the model feel less stiff, it gently floats up and down. We reduced this floating effect during the zoomed-in sections so the close-ups are easier to look at.
+- **Smooth movements:** We used `lerp` to make sure all animations and transitions feel fluid, regardless of the screen's frame rate.
 
 ## 10. Live URL
 
@@ -109,18 +96,14 @@ Each section pairs concise copy with a synchronized 3D camera move on the headph
 
 | Member | Contribution |
 |--------|--------------|
-| Kristine Elle Benjamin | React Three Fiber scene setup and 3D model integration — built the 3D scene (`Experience.jsx`) including camera, lighting, drag controls, and environment, created the GLTF headphone component (`Headphone.jsx`), integrated the `.glb` models, and set up the initial page layout and styling. |
-| Izzaty Balqis Binti Sulaiman | Project setup, configuration, and version-control integration — Vite/React scaffold, ESLint and build configuration, `package.json`, base `index.html`, project assets, and the README skeleton; reviewed and merged the bug-fix pull request. |
-| Abbenisha Ann Michael Benedict | Scroll animation implementation, motion effects development, and website content writing. |
-| Nur Hanani Binti Ahmad | Quality assurance and report support — cross-device testing, screenshot capture, and report/presentation preparation and proofreading. |
+| Kristine Elle Benjamin | Set up the React Three Fiber scene and integrated the 3D model. Built the main 3D scene (`Experience.jsx`) including the camera, lighting, drag controls, and environment. Created the GLTF headphone component (`Headphone.jsx`), added the `.glb` files, and worked on the initial layout and CSS. |
+| Izzaty Balqis Binti Sulaiman | Handled project setup, version control, and configuration. Scaffolded the Vite/React app, set up ESLint and build configs, organized project assets, and wrote the initial README structure. Also reviewed and merged pull requests. |
+| Abbenisha Ann Michael Benedict | Programmed the scroll animations, developed the motion effects, and wrote the content for the website. |
+| Nur Hanani Binti Ahmad | Handled quality assurance and report documentation. Tested the website across different devices, captured screenshots, and proofread the report and presentation materials. |
 
 ## 13. Conclusion
 
-UniWave demonstrates how **React Three Fiber** can turn a product landing page into an immersive,
-interactive experience. By combining a scroll-driven 3D narrative with clean, focused copy, the
-site communicates the product's value proposition more memorably than a static page could. The
-project met its objective: a modern, deployable, single-page 3D landing page that accurately
-represents the UniWave product and its three core features — AI Focus Mute, Study Mode, and EchoShare.
+Building the UniWave website showed us how much **React Three Fiber** can improve a standard product landing page. Instead of just a boring static page, combining 3D animations that respond to scrolling with clear text makes the product much more interesting to explore. Overall, we successfully met our goal: creating a modern, working 3D landing page that highlights UniWave's three main features (AI Focus Mute, Study Mode, and EchoShare) in a fun and interactive way.
 
 ---
 
@@ -131,4 +114,3 @@ npm install      # install dependencies
 npm run dev      # start dev server (http://localhost:5173)
 npm run build    # production build → dist/
 npm run preview  # preview the production build locally
-```
