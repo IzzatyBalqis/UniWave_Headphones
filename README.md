@@ -1,4 +1,4 @@
-# UniWave Headphones — 3D Product Landing Page
+# UniWave Headphones : 3D Product Landing Page
 
 This is our interactive 3D landing page for **UniWave**, a pair of smart headphones designed specifically for university students. The site is built as a single page using **React Three Fiber**.
 
@@ -80,7 +80,7 @@ As you scroll through these sections, the 3D headphone model moves and rotates t
 
 ## 10. Live URL
 
-`<ADD-YOUR-DEPLOYED-LINK-HERE>`
+`<deployed link>`
 
 ## 11. Screenshots
 
