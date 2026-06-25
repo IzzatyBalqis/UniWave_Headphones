@@ -2,7 +2,7 @@
 
 This is our interactive 3D landing page for **UniWave**, a pair of smart headphones designed specifically for university students. The site is built as a single page using **React Three Fiber**.
 
-> 📌 **Live URL:** `<link>`
+> 📌 **Live URL:** `<https://uniwaveheadphones.vercel.app/>`
 
 ---
 
@@ -82,7 +82,7 @@ The website is a single-page scrolling site broken down into six main sections:
 
 ## 🔗 10. Live URL
 
-👉 `<link>`
+👉 `<https://uniwaveheadphones.vercel.app/>`
 
 ## 📸 11. Screenshots
 
