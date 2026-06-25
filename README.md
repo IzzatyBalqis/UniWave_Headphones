@@ -29,10 +29,10 @@ Our goal was to create a modern and attractive single-page landing page to showc
 
 ## 🎓 5. Target Users
 
-* 📚 College and university students.
-* ☕ Anyone who needs to study in noisy or shared spaces.
-* ⏱️ Students who rely on study techniques like the Pomodoro method or who do group studies.
-* 💻 Young, tech-savvy people who enjoy modern and interactive websites.
+* College and university students.
+* Anyone who needs to study in noisy or shared spaces.
+* Students who rely on study techniques like the Pomodoro method or who do group studies.
+* Young, tech-savvy people who enjoy modern and interactive websites.
 
 ## 🛠️ 6. Tools and Technologies Used
 
@@ -55,12 +55,12 @@ Our goal was to create a modern and attractive single-page landing page to showc
 
 The website is a single-page scrolling site broken down into six main sections:
 
-1. **🌟 Hero section:** Introduces the brand with our tagline and an "Explore Sound" call-to-action.
-2. **📖 Introduction:** Gives a quick overview of the product ("Built for Focus. Made for Students.").
-3. **🔇 AI Focus Mute:** Highlights the real-time AI noise cancellation feature.
-4. **⏱️ Study Mode:** Showcases the built-in Pomodoro timer and background sounds.
-5. **🔗 EchoShare:** Explains how users can share audio with up to four headphones.
-6. **👋 Outro:** A final closing statement for the brand.
+1. **Hero section:** Introduces the brand with our tagline and an "Explore Sound" call-to-action.
+2. **Introduction:** Gives a quick overview of the product ("Built for Focus. Made for Students.").
+3. **AI Focus Mute:** Highlights the real-time AI noise cancellation feature.
+4. **Study Mode:** Showcases the built-in Pomodoro timer and background sounds.
+5. **EchoShare:** Explains how users can share audio with up to four headphones.
+6. **Outro:** A final closing statement for the brand.
 
 *As you scroll through these sections, the 3D headphone model moves and rotates to match the text on the screen!*
 
@@ -74,11 +74,11 @@ The website is a single-page scrolling site broken down into six main sections:
 
 ## 🕹️ 9. Interaction and Animation Description
 
-* **📜 Animations based on scrolling:** We tracked the scroll progress to trigger different keyframes. As you scroll, the headphone swings left or right (away from the text), zooms in to show details like the earcups, and centers itself for the intro and outro.
-* **🖱️ Interactive rotation:** Visitors can easily click and drag to look around the model.
-* **👀 Parallax effect:** The headphone slightly tilts depending on where your mouse cursor is, adding a nice 3D depth effect.
-* **🎈 Floating animation:** To make the model feel less stiff, it gently floats up and down. We reduced this floating effect during the zoomed-in sections so the close-ups are easier to look at.
-* **🌊 Smooth movements:** We used `lerp` to make sure all animations and transitions feel fluid, regardless of the screen's frame rate.
+* **Animations based on scrolling:** We tracked the scroll progress to trigger different keyframes. As you scroll, the headphone swings left or right (away from the text), zooms in to show details like the earcups, and centers itself for the intro and outro.
+* **Interactive rotation:** Visitors can easily click and drag to look around the model.
+* **Parallax effect:** The headphone slightly tilts depending on where your mouse cursor is, adding a nice 3D depth effect.
+* **Floating animation:** To make the model feel less stiff, it gently floats up and down. We reduced this floating effect during the zoomed-in sections so the close-ups are easier to look at.
+* **Smooth movements:** We used `lerp` to make sure all animations and transitions feel fluid, regardless of the screen's frame rate.
 
 ## 🔗 10. Live URL
 
