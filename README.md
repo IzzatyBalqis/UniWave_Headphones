@@ -1,4 +1,4 @@
-<img width="2529" height="1334" alt="hero png" src="https://github.com/user-attachments/assets/d0b15f69-b20e-49f3-b28b-e23689eaf82b" /># 🎧 UniWave Headphones: 3D Product Landing Page
+# 🎧 UniWave Headphones: 3D Product Landing Page
 
 This is our interactive 3D landing page for **UniWave**, a pair of smart headphones designed specifically for university students. The site is built as a single page using **React Three Fiber**.
 
@@ -88,7 +88,7 @@ The website is a single-page scrolling site broken down into six main sections:
 
 | Hero | Feature close-up |
 |------|------------------|
-| <img width="2529" height="1334" alt="hero png" src="https://github.com/user-attachments/assets/7064d26f-1624-4cfd-8006-657dd9abf2ec" /> | <img width="2535" height="1325" alt="feature png" src="https://github.com/user-attachments/assets/c64fc34e-a8d3-40f9-9ba8-53342b92c27f" /> |
+| <img width="2529" height="1334" alt="hero png" src="https://github.com/user-attachments/assets/7064d26f-1624-4cfd-8006-657dd9abf2ec" /> | <img width="2534" height="1325" alt="Screenshot 2026-06-25 220525" src="https://github.com/user-attachments/assets/7dea2b33-54eb-44e8-a3e7-225420db61cd" /> |
 
 ## 🏆 12. Individual Contribution
 
