@@ -52,7 +52,8 @@ standard feature list into an engaging, cinematic experience.
 | 3D model | `modelHeadPhone-transformed.glb` (compressed GLTF) |
 | Styling | Plain CSS (custom, responsive) |
 | Fonts | Inter (Google Fonts) |
-| Deployment | `<Netlify / Vercel / GitHub Pages>` |
+| Linting | ESLint (React hooks + refresh rules) |
+| Deployment | Vercel |
 
 ## 7. Website Features
 
@@ -104,14 +105,14 @@ Each section pairs concise copy with a synchronized 3D camera move on the headph
 
 ## 12. Individual Contribution
 
-> Adjust the contributions below to reflect what each member actually did.
+> Based on git history (commit authorship and file ownership). Adjust if needed.
 
 | Member | Contribution |
 |--------|--------------|
-| Kristine Elle Benjamin | `<e.g. 3D model integration & R3F scene setup>` |
-| Nur Hanani Binti Ahmad | `<e.g. scroll animation & keyframe story>` |
-| Izzaty Balqis Binti Sulaiman | `<e.g. layout, styling & responsive design>` |
-| Abbenisha Ann Michael Benedict | `<e.g. content, deployment & documentation>` |
+| Kristine Elle Benjamin | React Three Fiber scene setup and 3D model integration — built the 3D scene (`Experience.jsx`) including camera, lighting, drag controls, and environment, created the GLTF headphone component (`Headphone.jsx`), integrated the `.glb` models, and set up the initial page layout and styling. |
+| Izzaty Balqis Binti Sulaiman | Project setup, configuration, and version-control integration — Vite/React scaffold, ESLint and build configuration, `package.json`, base `index.html`, project assets, and the README skeleton; reviewed and merged the bug-fix pull request. |
+| Abbenisha Ann Michael Benedict | Scroll animation implementation, motion effects development, and website content writing. |
+| Nur Hanani Binti Ahmad | Quality assurance and report support — cross-device testing, screenshot capture, and report/presentation preparation and proofreading. |
 
 ## 13. Conclusion
 
